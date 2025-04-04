@@ -44,19 +44,19 @@
             <!-- formulaire d'objet personne avec nom prenom age profession , photo de profil, date de naissance numero de securité social, numero de carte bancaire etc... -->
              <form class="card-form" action="">
                 <label for="name">Nom:</label>
-                <input type="text" id="name" name="name"  />
+                <input type="text" id="name" name="name" required  />
 
                 <label for="surname">Prénom:</label>
-                <input type="text" id="surname" name="surname"  />
+                <input type="text" id="surname" name="surname" required />
 
                 <label for="age">Âge:</label>
-                <input type="number" id="age" name="age" min="0"  max="100" />
+                <input type="number" id="age" name="age" min="0"  max="100" required />
 
                 <label for="profession">Profession:</label>
-                <input type="text" id="profession" name="profession"  />
+                <input type="text" id="profession" name="profession" required />
 
                 <label for="dob">Date de naissance:</label>
-                <input type="date" id="dob" name="dob"  />
+                <input type="date" id="dob" name="dob" required  />
 
                 <button type="submit">Envoyer</button>
              </form>
