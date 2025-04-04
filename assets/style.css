@@ -145,6 +145,14 @@ input {
 
 
 /* cards */
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
 .card {
   height: 20rem;
   display: flex;

@@ -1,11 +1,10 @@
-console.log("hello world");
+const personnesArray = [{name: "John", surname: "Doe", age: "17", profession: "Dev", dob: "2000-01-01"}]
 
-const personnesArray = [{name: "John", surname: "Doe", age: "17", profession: "Dev", dob: "01/01/2000"}]
-
-// TODO Afficher les personnes existantes sous formes de cartes dans la Section 1
 const personnesContainer = document.getElementById("personnes-container")
 
 function renderCards (array) {
+    personnesContainer.innerHTML = "";
+
     array.forEach((card) =>{
         createCard(card);
     })  
@@ -32,13 +31,37 @@ function createCard(card) {
     const dobH4 = document.createElement("h4");
     dobH4.innerText = `Date Of Birth: ${dob}`
     cardContainer.appendChild(dobH4)
-
     
     personnesContainer.appendChild(cardContainer);
 }
 
 
 renderCards(personnesArray)
-// TODO Valider les données du formulaires dans la Section 2
 
-// TODO Ajouter une nouvelle personne au tableau et actualiser l'affichage
+
+
+
+
+// Ajouter une nouvelle card 
+const cardForm = document.querySelector(".card-form")
+cardForm.addEventListener("submit", (event) => {
+    event.preventDefault()
+
+    const newCard = {}
+ 
+    newCard.name = cardForm.name.value;
+    newCard.surname = cardForm.surname.value;
+
+    // Vérification de l'âge
+    const age = Number(cardForm.age.value);
+    if (!age) return;
+    if (age < 0 || age > 100) return
+
+    newCard.age = age;
+    newCard.profession = cardForm.profession.value;
+    newCard.dob = cardForm.dob.value;
+
+    personnesArray.push(newCard);
+
+    renderCards(personnesArray)
+})
