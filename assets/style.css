@@ -141,3 +141,16 @@ input {
     color: var(--nav-text-color);
     background-color: var(--hero-bg-color);
 }
+
+
+
+/* cards */
+.card {
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  border: 2px solid green;
+  padding: 2rem;
+}
